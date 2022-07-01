@@ -6,7 +6,6 @@ then
 fi
 
 PROTOCOL=$1
-
 RPC_URL=$(curl https://cosmos-chain.directory/chains/$PROTOCOL --silent | jq ".apis.rpc[0].address" -r)
 
 if [[ "$RPC_URL" != *"443"* ]]; then
