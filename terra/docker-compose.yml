@@ -14,3 +14,4 @@ services:
       - ADDRBOOK_URL=https://quicksync.io/addrbook.terra.json
     volumes:
       - ./node-data:/root/.terra
+      - ../run.sh:/usr/bin/run.sh

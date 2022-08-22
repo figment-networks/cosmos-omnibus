@@ -13,4 +13,4 @@ services:
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.cht
+      - ./node-data:/root/.cht      - ../run.sh:/usr/bin/run.sh

@@ -12,3 +12,4 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/starname/chain.json
     volumes:
       - ./node-data:/root/.starnamed
+      - ../run.sh:/usr/bin/run.sh

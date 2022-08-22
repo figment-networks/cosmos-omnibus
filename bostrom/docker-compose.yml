@@ -13,3 +13,4 @@ services:
       - MINIMUM_GAS_PRICES=0.01boot
     volumes:
       - ./node-data:/root/.bostrom
+      - ../run.sh:/usr/bin/run.sh

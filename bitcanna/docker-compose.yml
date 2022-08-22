@@ -17,3 +17,4 @@ services:
       - ../.env
     volumes:
       - ./node-data:/root/.bcna
+      - ../run.sh:/usr/bin/run.sh

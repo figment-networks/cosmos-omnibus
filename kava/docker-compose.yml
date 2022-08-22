@@ -15,3 +15,4 @@ services:
       - SNAPSHOT_POLKACHU=1
     volumes:
       - ./node-data:/root/.kava
+      - ../run.sh:/usr/bin/run.sh

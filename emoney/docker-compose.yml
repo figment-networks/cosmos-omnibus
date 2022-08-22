@@ -13,3 +13,4 @@ services:
       - SNAPSHOT_QUICKSYNC=https://quicksync.io/emoney.json
     volumes:
       - ./node-data:/root/.emd
+      - ../run.sh:/usr/bin/run.sh

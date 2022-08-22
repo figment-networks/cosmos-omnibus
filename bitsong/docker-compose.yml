@@ -12,3 +12,4 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/chain.json
     volumes:
       - ./node-data:/root/.bitsongd
+      - ../run.sh:/usr/bin/run.sh

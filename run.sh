@@ -214,46 +214,8 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   mv genesis.json $CONFIG_PATH/genesis.json
 fi
 
-# Snapshot
-if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
-  SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
-
-  if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_BASE_URL}" ]; then
-    SNAPSHOT_PATTERN="${SNAPSHOT_PATTERN:-$CHAIN_ID.*$SNAPSHOT_FORMAT}"
-    SNAPSHOT_URL=$SNAPSHOT_BASE_URL/$(curl -s $SNAPSHOT_BASE_URL/ | egrep -o ">$SNAPSHOT_PATTERN" | tr -d ">");
-  fi
-
-  if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_JSON}" ]; then
-    SNAPSHOT_URL="$(curl -s $SNAPSHOT_JSON | jq -r .latest)"
-  fi
-
-  if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_QUICKSYNC}" ]; then
-    SNAPSHOT_PRUNING="${SNAPSHOT_PRUNING:-pruned}"
-    SNAPSHOT_DATA_PATH="data"
-    SNAPSHOT_FORMAT="lz4"
-    SNAPSHOT_URL=`curl -s $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
-  fi
-
-  if [ -n "${SNAPSHOT_URL}" ]; then
-    echo "Downloading snapshot from $SNAPSHOT_URL..."
-    rm -rf $PROJECT_ROOT/data;
-    mkdir -p $PROJECT_ROOT/data;
-    cd $PROJECT_ROOT/data
-
-    [[ $SNAPSHOT_FORMAT = "tar.gz" ]] && tar_args="xzf" || tar_args="xf"
-    [[ $SNAPSHOT_FORMAT = "lz4" ]] && tar_cmd="lz4 -d | tar $tar_args -" || tar_cmd="tar $tar_args -"
-    wget -nv -O - $SNAPSHOT_URL | eval $tar_cmd
-    [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
-  else
-    echo "Snapshot URL not found"
-  fi
-fi
-
 # Validate genesis
 [ "$VALIDATE_GENESIS" == "1" ] && $PROJECT_BIN validate-genesis
 
-if [ -n "$SNAPSHOT_PATH" ]; then
-  exec snapshot.sh "$START_CMD"
-else
-  exec "$@"
-fi
+echo hello!
+while true; do sleep 1000; done

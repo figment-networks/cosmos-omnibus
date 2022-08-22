@@ -12,3 +12,4 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/likecoin/chain.json
     volumes:
       - ./node-data:/root/.liked
+      - ../run.sh:/usr/bin/run.sh

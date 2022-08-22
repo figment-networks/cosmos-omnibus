@@ -17,3 +17,4 @@ services:
       - MINIMUM_GAS_PRICES=5umed
     volumes:
       - ./node-data:/root/.panacea
+      - ../run.sh:/usr/bin/run.sh

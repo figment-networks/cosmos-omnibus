@@ -13,3 +13,4 @@ services:
       - SNAPSHOT_QUICKSYNC=https://quicksync.io/crypto.json
     volumes:
       - ./node-data:/root/.chain-maind
+      - ../run.sh:/usr/bin/run.sh

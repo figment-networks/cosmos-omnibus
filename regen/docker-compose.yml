@@ -13,3 +13,4 @@ services:
       - MINIMUM_GAS_PRICES=0.025uregen
     volumes:
       - ./node-data:/root/.regen
+      - ../run.sh:/usr/bin/run.sh
