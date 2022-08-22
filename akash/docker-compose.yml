@@ -17,3 +17,4 @@ services:
       - SNAPSHOT_POLKACHU=1
     volumes:
       - ./node-data:/root/.akash
+      - ../run.sh:/usr/bin/run.sh

@@ -14,3 +14,4 @@ services:
       - OVERWRITE_SEEDS=1
     volumes:
       - ./node-data:/root/.thornode
+      - ../run.sh:/usr/bin/run.sh

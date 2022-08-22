@@ -12,3 +12,4 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/crescent/chain.json
     volumes:
       - ./node-data:/root/.crescentd
+      - ../run.sh:/usr/bin/run.sh

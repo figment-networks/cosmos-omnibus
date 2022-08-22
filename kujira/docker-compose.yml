@@ -18,3 +18,4 @@ services:
       - KUJIRAD_CONSENSUS_TIMEOUT_COMMIT=1500ms
     volumes:
       - ./node-data:/root/.kujira
+      - ../run.sh:/usr/bin/run.sh

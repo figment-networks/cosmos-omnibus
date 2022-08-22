@@ -13,3 +13,4 @@ services:
       - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json
     volumes:
       - ./node-data:/root/.sentinelhub
+      - ../run.sh:/usr/bin/run.sh

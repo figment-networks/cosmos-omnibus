@@ -13,3 +13,4 @@ services:
       - BINARY_ZIP_PATH=akash_0.15.0-rc14_linux_amd64/akash
     volumes:
       - ./node-data:/root/.akash
+      - ../run.sh:/usr/bin/run.sh

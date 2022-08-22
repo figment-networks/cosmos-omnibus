@@ -20,3 +20,4 @@ services:
       - SNAPSHOT_DATA_PATH=data
     volumes:
       - ./node-data:/root/.defund
+      - ../run.sh:/usr/bin/run.sh

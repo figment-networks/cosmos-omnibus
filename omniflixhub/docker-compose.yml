@@ -16,3 +16,4 @@ services:
       - MINIMUM_GAS_PRICES=0.001uflix
     volumes:
       - ./node-data:/root/.omniflixhub
+      - ../run.sh:/usr/bin/run.sh

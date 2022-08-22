@@ -13,3 +13,4 @@ services:
       - SNAPSHOT_QUICKSYNC=https://quicksync.io/lum.json
     volumes:
       - ./node-data:/root/.lumd
+      - ../run.sh:/usr/bin/run.sh
